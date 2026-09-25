@@ -1,0 +1,30 @@
+RAG Agent Practice Document
+
+Introduction
+Retrieval-Augmented Generation (RAG) combines document retrieval with a language model. A RAG system searches a collection of documents for relevant information and gives that information to a language model to generate an answer.
+
+How RAG Works
+1. Documents are loaded.
+2. Text is divided into smaller chunks.
+3. Each chunk is converted into an embedding.
+4. Embeddings are stored in a vector database such as FAISS.
+5. A user's question is converted into an embedding.
+6. FAISS retrieves relevant document chunks.
+7. Retrieved chunks are provided to the language model as context.
+8. The language model generates the final answer.
+
+Embeddings
+An embedding represents the meaning of text as a numerical vector. Texts with similar meanings tend to have similar vector representations. Sentence Transformers can create embeddings.
+
+FAISS
+FAISS is a library for efficient similarity search. In a RAG application, FAISS stores document embeddings and retrieves chunks that are semantically similar to a user's question.
+
+Chunking
+Large documents are divided into smaller chunks before embeddings are created. Chunk size and overlap affect retrieval quality. Overlap helps preserve information across chunk boundaries.
+
+Example
+Question: What is the purpose of FAISS?
+Answer: FAISS stores and searches vector embeddings efficiently so a RAG system can retrieve relevant document chunks.
+
+Conclusion
+The main RAG pipeline is: documents → loading → chunking → embeddings → vector database → retrieval → generation.
